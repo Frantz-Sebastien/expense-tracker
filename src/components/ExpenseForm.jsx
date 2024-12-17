@@ -1,14 +1,14 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ addExpense }) => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
 
 
   return (
-    <form action="" className='mb-5' onSubmit={handleSubmit(data => console.log(data))}>
+    <form action="" className='mb-5' onSubmit={handleSubmit((data) => {addExpense(data); reset()})}>
         
         <div classNam="mb-3">
             <label htmlFor='description' className='form-label'>Description</label>
