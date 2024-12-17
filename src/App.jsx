@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import ExpenseList from './components/ExpenseList'
+import ExpenseFilter from "./components/ExpenseFilter"
 import './App.css'
 
 function App() {
@@ -18,9 +19,14 @@ function App() {
     setExpenses(expenses.filter(expense => expense.id !== id))
   }
 
+  const filterItem = (ctgry) => {
+    setExpenses(expenses.filter(expense => expense.category == ctgry))
+  }
+
   return (
     <>
-      <ExpenseList items = {expenses} deleteItem = {deleteItem} />
+    <ExpenseFilter filterItem = {filterItem}/>
+    <ExpenseList items = {expenses} deleteItem = {deleteItem} />
     </>
   )
 }
