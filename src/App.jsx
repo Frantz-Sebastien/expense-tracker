@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import ExpenseList from './components/ExpenseList'
 import ExpenseFilter from "./components/ExpenseFilter"
+import ExpenseForm from "./components/ExpenseForm"
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <>
+    <ExpenseForm />
     <ExpenseFilter filterItem = {filterItem}/>
     <ExpenseList items = {expenses} deleteItem = {deleteItem} />
     </>
