@@ -14,9 +14,13 @@ function App() {
     {id:5, description:"Netflix", amount: 16, category: "entertainment"},
   ])
 
+  const deleteItem = (id) => {
+    setExpenses(expenses.filter(expense => expense.id !== id))
+  }
+
   return (
     <>
-      <ExpenseList items = {expenses} />
+      <ExpenseList items = {expenses} deleteItem = {deleteItem} />
     </>
   )
 }
