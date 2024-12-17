@@ -1,35 +1,32 @@
 import React from 'react'
 
-const ExpenseList = () => {
+const ExpenseList = ({items}) => {
   return (
     <div>
-        <table class="table">
+        <table className="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      
+      <th scope="col">Description</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Category</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    { items.map((item) => <tr>
+     
+     <td>{item.description}</td>
+     <td>${item.amount}</td>
+     <td>{item.category}</td>
+   </tr>)
+   }
+
+   <tr>
+    <td><h3>Total</h3></td>
+    <td><h3>{}</h3></td>
+   </tr>
+    
+   
   </tbody>
 </table>
     </div>

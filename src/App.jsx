@@ -5,11 +5,18 @@ import ExpenseList from './components/ExpenseList'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [expenses, setExpenses] = useState([
+    {id:1, description:"2 boxes of cereal", amount: 20, category: "groceries"},
+    {id:2, description:"milk", amount:4, category: "groceries"},
+    {id:3, description:"ConEd", amount: 73, category: "utilities"},
+    {id:4, description:"Spotify", amount: 10, category: "entertainment"},
+    {id:5, description:"Netflix", amount: 16, category: "entertainment"},
+  ])
 
   return (
     <>
-      <ExpenseList />
+      <ExpenseList items = {expenses} />
     </>
   )
 }
