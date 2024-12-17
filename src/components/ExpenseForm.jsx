@@ -10,7 +10,7 @@ const ExpenseForm = ({ addExpense }) => {
   return (
     <form action="" className='mb-5' onSubmit={handleSubmit((data) => {addExpense(data); reset()})}>
         
-        <div classNam="mb-3">
+        <div className="mb-3">
             <label htmlFor='description' className='form-label'>Description</label>
             <input id="description" type="text" className='form-control' {...register("description", {minLength: 6, required:true} )} />
             {errors.description?.type == "required" && <p className='text-danger'>This field is required</p>}
@@ -18,13 +18,13 @@ const ExpenseForm = ({ addExpense }) => {
             
         </div>
 
-        <div classNam="mb-3">
+        <div className="mb-3">
             <label htmlFor='amount' className='form-label'>Amount</label>
             <input id="amount" type="number" className='form-control' {...register("amount", {required: true})}/>
             {errors.amount?.type == "required" && <p className='text-danger'>This field is required</p>}
         </div>
 
-        <div classNam="mb-3">
+        <div className="mb-3">
             <label htmlFor='description' className='form-label'>
                 Category
             </label>
