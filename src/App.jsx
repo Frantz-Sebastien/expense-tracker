@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import ExpenseList from './components/ExpenseList'
 import ExpenseFilter from "./components/ExpenseFilter"
 import ExpenseForm from "./components/ExpenseForm"
+import AddItemModal from "./components/AddItemModal"
 import './App.css'
 
 
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <>
+      <AddItemModal />
       <ExpenseForm addExpense={addItem} />
       <ExpenseFilter filterItem={setFilterCategory} />
       <ExpenseList items={filteredExpenses} deleteItem={deleteItem} />
