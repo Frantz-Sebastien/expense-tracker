@@ -40,8 +40,8 @@ function App() {
       onClick={() => setItemModal(true)}>
       Add Transaction
       </button>
-      {itemModal && <AddItemModal closeModal={setItemModal} />}
-      <ExpenseForm addExpense={addItem} />
+      {itemModal && <AddItemModal closeModal={setItemModal} addExpense={addItem}/>}
+      {/* <ExpenseForm addExpense={addItem} /> */}
       <ExpenseFilter filterItem={setFilterCategory} />
       <ExpenseList items={filteredExpenses} deleteItem={deleteItem} />
     </>
