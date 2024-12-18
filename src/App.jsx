@@ -20,6 +20,8 @@ function App() {
 
   const [filterCategory, setFilterCategory] = useState('');
 
+  const [itemModal, setItemModal] = useState(false)
+
   const deleteItem = (id) => {
     setExpenses(expenses.filter(expense => expense.id !== id));
   };
@@ -34,7 +36,11 @@ function App() {
 
   return (
     <>
-      <AddItemModal />
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      onClick={() => setItemModal(true)}>
+      Add Transaction
+      </button>
+      {itemModal && <AddItemModal closeModal={setItemModal} />}
       <ExpenseForm addExpense={addItem} />
       <ExpenseFilter filterItem={setFilterCategory} />
       <ExpenseList items={filteredExpenses} deleteItem={deleteItem} />
